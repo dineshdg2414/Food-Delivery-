@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Chennai Delights</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #d35400;
+            --secondary-color: #e67e22;
+            --accent-color: #f39c12;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --success-color: #27ae60;
+            --danger-color: #e74c3c;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn.primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn.primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo p {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1543353071-873f17a7a088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .story-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .story-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .story-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #777;
+            font-size: 1.2rem;
+        }
+
+        /* Values Section */
+        .our-values {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        /* Team Section */
+        .our-team {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-image {
+            height: 250px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #777;
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-info h3 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .member-info .position {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(211, 84, 0, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            color: #555;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #777;
+        }
+
+        .author-info h4 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .author-info .role {
+            color: #777;
+        }
+
+        /* Call to Action */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: var(--light-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            header .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .about-hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .story-image {
+                order: -1;
+            }
+            
+            .about-hero {
+                height: 350px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-hero {
+                height: 300px;
+            }
+            
+            .about-hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-utensils"></i> Chennai Delights</h1>
+                <p>Authentic Tamil Nadu Style</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/home%20page/indexs.html">Home</a></li>
+                    <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/menu%20page/menu.html">Menu</a></li>
+                    <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/offer%20page/offers.html">Offers</a></li>
+                    <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/about/about.html" class="active">About Us</a></li>
+                    <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/contact%20page/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <a href="file:///C:/Users/Tuf/Desktop/delivery%20app/cart%20page/cart.html" class="btn">
+                    <i class="fas fa-shopping-cart"></i> Cart (0)
+                </a>
+                <a href="file:///C:/Users/Tuf/Desktop/delivery%20app/login/index.html" class="btn primary">
+                    <i class="fas fa-user"></i> Sign In
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1>Our Journey of Authentic Flavors</h1>
+                <p>Discover the story behind Chennai Delights, where passion meets tradition in every dish we serve.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>A Taste of Tradition Since 2010</h3>
+                    <p>Chennai Delights was born from a simple dream: to share the authentic flavors of Tamil Nadu with the world. Our founder, Rajesh Kumar, started this journey in a small kitchen in Chennai, driven by his grandmother's recipes and a passion for culinary excellence.</p>
+                    <p>What began as a humble home kitchen quickly grew into a beloved local eatery. Today, we're proud to serve thousands of customers who appreciate the rich, aromatic flavors of traditional South Indian cuisine.</p>
+                    <p>Every dish at Chennai Delights tells a story - of family traditions, regional ingredients, and the perfect balance of spices that make Tamil Nadu cuisine truly special.</p>
+                </div>
+                <div class="story-image">
+                    Restaurant Kitchen Image
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="our-values">
+        <div class="container">
+            <h2 class="section-title">Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Authenticity</h3>
+                    <p>We stay true to traditional recipes, using time-honored techniques passed down through generations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Quality Ingredients</h3>
+                    <p>We source the freshest local produce and premium spices to ensure every dish meets our high standards.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Passion</h3>
+                    <p>Our chefs pour their heart and soul into every dish, creating culinary experiences that delight the senses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="our-team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Master Chefs</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        Chef Rajesh
+                    </div>
+                    <div class="member-info">
+                        <h3>Rajesh Kumar</h3>
+                        <div class="position">Founder & Head Chef</div>
+                        <p>With over 20 years of experience, Chef Rajesh brings traditional recipes to life.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        Chef Priya
+                    </div>
+                    <div class="member-info">
+                        <h3>Priya Sundaram</h3>
+                        <div class="position">Sous Chef</div>
+                        <p>Specializing in Chettinad cuisine, Chef Priya creates our signature spicy dishes.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        Chef Arjun
+                    </div>
+                    <div class="member-info">
+                        <h3>Arjun Venkat</h3>
+                        <div class="position">Pastry Chef</div>
+                        <p>Master of traditional sweets like Mysore Pak and Badusha.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Chennai Delights brought back memories of my grandmother's cooking. The Masala Dosa is perfection - crispy, flavorful, and served with the most delicious sambar and chutneys."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            AK
+                        </div>
+                        <div class="author-info">
+                            <h4>Ananya Krishnan</h4>
+                            <div class="role">Regular Customer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As someone from Chennai living abroad, the flavors at Chennai Delights make me feel like I'm back home. Their Chettinad Chicken Curry is absolutely authentic!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            VP
+                        </div>
+                        <div class="author-info">
+                            <h4>Vikram </h4>
+                            <div class="role">Food Blogger</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The attention to detail in every dish is remarkable. From the perfectly steamed idlis to the aromatic biryani, Chennai Delights never disappoints. A true taste of South India!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            SM
+                        </div>
+                        <div class="author-info">
+                            <h4>Sanjay</h4>
+                            <div class="role">Food Critic</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Experience Authentic Tamil Nadu Cuisine?</h2>
+            <p>Join thousands of satisfied customers who have discovered the rich flavors of South India through our kitchen.</p>
+            <a href="file:///C:/Users/Tuf/Desktop/delivery%20app/menu%20page/menu.html" class="btn primary">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Chennai Delights</h3>
+                    <p>Serving authentic Tamil Nadu cuisine since 2010. Experience the rich flavors of South India.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                      <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/home%20page/indexs.html">Home</a></li>
+                        <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/menu%20page/menu.html">Menu</a></li>
+                        <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/offer%20page/offers.html">Offers</a></li>
+                        <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/about/about.html">About Us</a></li>
+                        <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/contact%20page/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Anna Salai, Chennai</p>
+                    <p><i class="fas fa-phone"></i> +91 63796 23373</p>
+                    <p><i class="fas fa-envelope"></i> order@chennaidelights.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Chennai Delights. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for the About page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set active link in navigation
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Animation for team members
+            const teamMembers = document.querySelectorAll('.team-member');
+            
+            teamMembers.forEach(member => {
+                member.addEventListener('mouseenter', () => {
+                    member.style.transform = 'translateY(-10px)';
+                });
+                
+                member.addEventListener('mouseleave', () => {
+                    member.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

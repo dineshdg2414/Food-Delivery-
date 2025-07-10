@@ -1,0 +1,255 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    animation: slideUp 0.6s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo i {
+    font-size: 50px;
+    color: #764ba2;
+    margin-bottom: 15px;
+}
+
+.logo h1 {
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+label i {
+    margin-right: 10px;
+    color: #764ba2;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e1e1e1;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input:focus {
+    border-color: #764ba2;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.2);
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    color: #555;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.options input {
+    margin-right: 8px;
+}
+
+.options a {
+    color: #764ba2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#loginBtn {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginBtn i {
+    margin-right: 10px;
+}
+
+#loginBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(118, 75, 162, 0.4);
+}
+
+.divider {
+    position: relative;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #777;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #e1e1e1;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-btn {
+    flex: 1;
+    background: white;
+    border: 1px solid #e1e1e1 !important;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-btn i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.social-btn.google:hover {
+    border-color: #db4437 !important;
+    color: #db4437;
+}
+
+.social-btn.facebook:hover {
+    border-color: #4267B2 !important;
+    color: #4267B2;
+}
+
+.register-link {
+    text-align: center;
+    color: #555;
+    font-size: 15px;
+}
+
+.register-link a {
+    color: #764ba2;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 8px;
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+    
+    .social-login {
+        flex-direction: column;
+    }
+}

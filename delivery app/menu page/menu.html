@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chennai Delights - Our Menu</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-utensils"></i> Chennai Foodie</h1>
+                <p>Authentic Tamil Nadu Style</p>
+            </div>
+            <nav>
+                <ul>
+                     <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/home%20page/indexs.html">Home</a></li>
+                        <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/menu%20page/menu.html">Menu</a></li>
+                        <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/offer%20page/offers.html">Offers</a></li>
+                        <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/about/about.html">About Us</a></li>
+                        <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/contact%20page/contact.html">Contact</a></li>
+                </ul>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <button class="btn" id="cart-button">
+                    <i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+                </button>
+                <button class="btn primary">
+                    <i class="fas fa-user"></i> Sign In
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Hero Section -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Our Delicious Menu</h1>
+            <p>Experience the authentic flavors of Tamil Nadu</p>
+        </div>
+    </section>
+
+    <!-- Menu Filters -->
+    <section class="menu-filters">
+        <div class="container">
+            <div class="filter-options">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search for dishes...">
+                    <button id="search-button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-category">
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="veg">Vegetarian</option>
+                        <option value="non-veg">Non-Vegetarian</option>
+                    </select>
+                </div>
+                <div class="filter-category">
+                    <select id="price-filter">
+                        <option value="all">All Prices</option>
+                        <option value="price-low">Under ₹150</option>
+                        <option value="price-medium">₹150 - ₹300</option>
+                        <option value="price-high">Above ₹300</option>
+                    </select>
+                </div>
+                <div class="filter-category">
+                    <select id="spice-filter">
+                        <option value="all">All Spice Levels</option>
+                        <option value="spice-mild">Mild</option>
+                        <option value="spice-medium">Medium</option>
+                        <option value="spice-hot">Hot</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Items Section -->
+    <section class="food-items">
+        <div class="container">
+            <div class="items-grid">
+                <!-- Food items will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded by JavaScript -->
+        </div>
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0</span>
+            </div>
+            <div class="summary-row">
+                <span>Delivery Fee:</span>
+                <span>₹30</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span id="cart-total">₹30</span>
+            </div>
+            <button class="btn primary checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Chennai Delights</h3>
+                    <p>Serving authentic Tamil Nadu cuisine since 2010. Experience the rich flavors of South India.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                       <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/home%20page/indexs.html">Home</a></li>
+                    <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/menu%20page/menu.html">Menu</a></li>
+                    <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/offer%20page/offers.html">Offers</a></li>
+                    <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/about/about.html">About Us</a></li>
+                    <li><a href="file:///C:/Users/Tuf/Desktop/delivery%20app/contact%20page/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Anna Salai, Chennai</p>
+                    <p><i class="fas fa-phone"></i> +91 63796 23373</p>
+                    <p><i class="fas fa-envelope"></i> order@chennaidelights.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Chennai Delights. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu.js"></script>
+</body>
+</html>
